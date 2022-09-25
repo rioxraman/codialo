@@ -10,6 +10,18 @@ const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 // const MongoStore = require('connect-mongo')(session);
 const MongoStore = require('connect-mongo');
+
+//sass middleware
+const saasMiddleware =require('node-sass-middleware');
+
+app.use(saasMiddleware({
+    src:'./assets/scss/',
+    dest:'./assets/css/',
+    debug:true,
+    outputStyle:'extended',
+    prefix:'/css'
+
+}))
 //cookies
 app.use(express.urlencoded());
 app.use(cookieParser());
@@ -54,7 +66,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
 //router 
-app.use('/',require('./routes')); 
+app.use('/', require('./routes')); 
 
 app.listen(port, function(err){
     if(err){

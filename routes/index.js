@@ -1,13 +1,18 @@
 const express = require('express');
+
 const router = express.Router();
-const hController  = require('../controllers/home_controller')
-// respond with "hello world" when a GET request is made to the homepag, (req, res) => {
+const homeController = require('../controllers/home_controller');
 
-console.log("routerloaded");
-router.get('/', hController.homeControl);
-router.use('/users', require('./users'));   
+console.log('router loaded');
 
-// for anty further routes, access from here
+
+router.get('/', homeController.home);
+router.use('/users', require('./users'));
+router.use('/posts', require('./posts'));
+router.use('/comments', require('./comments'));
+
+// for any further routes, access from here
 // router.use('/routerName', require('./routerfile));
 
-module.exports =router;
+
+module.exports = router;

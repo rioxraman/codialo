@@ -1,13 +1,32 @@
+const Post = require('../models/post');
 
-module.exports.homeControl = function(req,res){
-    console.log(req.cookies);
-    res.cookie('user_id',27);
-    return res.render('home',{
-        title: "HomePage "
-    });
+module.exports.home = function(req, res){
+    // console.log(req.cookies);
+    // res.cookie('user_id', 25);
+
+    // Post.find({}, function(err, posts){
+    //     return res.render('home', {
+    //         title: "Codeial | Home",
+    //         posts:  posts
+    //     });
+    // });
+
+    // populate the user of each post
+    Post.find({})
+    .populate('user')
+    .populate({
+        path: 'comments',
+        populate: {
+            path: 'user'
+        }
+    })
+    .exec(function(err, posts){
+        return res.render('home', {
+            title: "Codialo | Home",
+            posts:  posts
+        });
+    })
+
 }
 
-
-// module.exports.actionName = function(req,res){
-//     // return res.end('<h1>Express is served</h1>');
-// }
+// module.exports.actionName = function(req, res){}
