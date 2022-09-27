@@ -31,6 +31,8 @@ app.use(cookieParser());
 app.use(expressLayouts);
 //static
 app.use(express.static('./assets')); 
+//multer
+app.use('/uploads',express.static(__dirname + '/uploads'));
 
 
 //extract
