@@ -72,6 +72,7 @@ module.exports.signIn = function(req, res){
 // get the sign up data
 module.exports.create = function(req, res){
     if (req.body.password != req.body.confirm_password){
+        req.flash('error', 'Passwords do not match');
         return res.redirect('back');
     }
 
@@ -80,11 +81,12 @@ module.exports.create = function(req, res){
 
         if (!user){
             User.create(req.body, function(err, user){
-                if(err){console.log('error in creating user while signing up'); return}
+                if(err){req.flash('error', err); return}
 
                 return res.redirect('/users/sign-in');
             })
         }else{
+            req.flash('success', 'You have signed up, login to continue!');
             return res.redirect('back');
         }
 
