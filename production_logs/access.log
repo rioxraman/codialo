@@ -166,3 +166,14 @@
 [0mGET /users/css/footer.css [33m404[0m 20.686 ms - 159[0m
 [0mPOST /users/create-session [36m302[0m 25.928 ms - 46[0m
 [0mGET / [32m200[0m 101.976 ms - 29277[0m
+::1 - - [08/Oct/2022:07:00:51 +0000] "GET / HTTP/1.1" 200 3042 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
+::1 - - [08/Oct/2022:07:00:52 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
+::1 - - [08/Oct/2022:07:00:53 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
+::1 - - [08/Oct/2022:07:00:53 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
+::1 - - [08/Oct/2022:07:01:31 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
+::1 - - [08/Oct/2022:07:02:37 +0000] "GET / HTTP/1.1" 200 3040 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Mobile Safari/537.36"
+::1 - - [08/Oct/2022:07:02:37 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8000/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Mobile Safari/537.36"
+::1 - - [08/Oct/2022:07:02:37 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8000/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Mobile Safari/537.36"
+[0mGET / [32m200[0m 230.646 ms - 19224[0m
+::1 - - [08/Oct/2022:07:03:16 +0000] "GET / HTTP/1.1" 200 3040 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
+::1 - - [08/Oct/2022:07:03:16 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
