@@ -158,3 +158,11 @@
 ::1 - - [04/Oct/2022:10:14:16 +0000] "GET /js/home_posts.js HTTP/1.1" 404 155 "http://localhost:8000/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Mobile Safari/537.36"
 ::1 - - [04/Oct/2022:10:14:16 +0000] "GET /js/chat_engine.js HTTP/1.1" 404 156 "http://localhost:8000/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Mobile Safari/537.36"
 ::1 - - [04/Oct/2022:10:14:16 +0000] "GET /js/toggle_likes.js HTTP/1.1" 404 157 "http://localhost:8000/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Mobile Safari/537.36"
+[0mGET / [32m200[0m 354.229 ms - 19226[0m
+[0mGET /favicon.ico [33m404[0m 14.686 ms - 150[0m
+[0mGET /users/sign-in [32m200[0m 17.100 ms - 2190[0m
+[0mGET /users/css/layout.css [33m404[0m 12.027 ms - 159[0m
+[0mGET /users/css/header.css [33m404[0m 10.597 ms - 159[0m
+[0mGET /users/css/footer.css [33m404[0m 20.686 ms - 159[0m
+[0mPOST /users/create-session [36m302[0m 25.928 ms - 46[0m
+[0mGET / [32m200[0m 101.976 ms - 29277[0m

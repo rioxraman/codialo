@@ -3,6 +3,7 @@ const env = require('./config/environment');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const app = express();
+require('./config/view-helpers')(app);
 const port = 8000;
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
@@ -16,7 +17,7 @@ const passportGoogle = require('./config/passport-google-oauth2-strategy');
 const MongoStore = require('connect-mongo');
 const flash =require('connect-flash');
 //sass middleware
-const saasMiddleware =require('node-sass-middleware');
+const sassMiddleware =require('node-sass-middleware');
 const customWare = require('./config/middleware');
 
 //cors
@@ -34,7 +35,7 @@ app.use(cors());
     
 
 if(env.name =='development'){
-    app.use(saasMiddleware({
+    app.use(sassMiddleware({
         src:'./assets/scss',
         dest:'./assets/css',
         debug:true,

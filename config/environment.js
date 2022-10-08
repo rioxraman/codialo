@@ -13,7 +13,7 @@ const accessLogStream = rfs.createStream('access.log',{
 
 const development = {
     name: 'development',
-    asset_path: '/assets',
+    asset_path: './assets',
     session_cookie_key: 'codialo',
     db: 'codialo_development',
     smtp: {
@@ -29,11 +29,14 @@ const development = {
 
     
     jwt_secret: 'codialo',
-    google_clientID: "200918686716-xxxxxxxxxxx.apps.googleusercontent.com",
-    google_clientSecret: "GOCSPX-xxxxxxxxxxxxxxx",
-    google_callbackURL: "http://localhost:8000/users/auth/google/callback",
+    google_client_id: "200918686716-xxxxxxxxxxx.apps.googleusercontent.com",
+    google_client_secret: "GOCSPX-xxxxxxxxxxxxxxx",
+    google_call_back_url: "http://localhost:8000/users/auth/google/callback",
+    morgan: {
+        mode: 'dev',
+        options: {stream: accessLogStream}
+    }
 }
-
    // "Un}VWl)~nazs3{w" sessioncookies 
    // "W+hFbe%NbG[r]g!"  jwt secret
    //db "codialo_production"
