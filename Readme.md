@@ -43,3 +43,41 @@ export CODIALO_GOOGLE_CLIENT_SECRET="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"
 export CODIALO_GOOGLE_CALLBACK_RURL="http://localhost:8000/users/auth/google/callback"
 export CODIALO_ENVIRONMENT="production"
 export CODIALO_JWT_SECRET="W+hFbe%NbG[r]g!"
+
+server {
+    listen 80;
+    server_name saibys.com 54.82.10.220;
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+     }
+}
+server {
+  listen 443 ssl;
+  server_name *.saibys.com;
+  ssl_certificate /etc/letsencrypt/live/saibys.com/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/saibys.com/privkey.pem;
+  include /etc/letsencrypt/options-ssl-nginx.conf;
+  ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+  root /var/www/saibys.com;
+  index index.html;
+  location / {
+    try_files $uri $uri/ =404;
+  }
+}
+server {
+    listen 80;
+    server_name saibys.com 54.82.10.220;
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+     }
+}
